@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'Checkpoints',
     'Inventory',
     'Item',
-    'Location',
+    'MapLocation',
     'Potion',
     'Reward',
     'Stats',
