@@ -41,6 +41,19 @@ INSTALLED_APPS = [
     'rest_framework',
     'djoser',
     #My Apps
+    'User',
+    'Boss',
+    'Character',
+    'Checkpoints',
+    'Inventory',
+    'Item',
+    'Location',
+    'Money',
+    'Potion',
+    'Reward',
+    'Stats',
+    'Weapon',
+
 
 ]
 
