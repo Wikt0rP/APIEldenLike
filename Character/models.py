@@ -7,7 +7,7 @@ from Potion.models import Potion
 
 class Character(models.Model):
     characterName = models.CharField(max_length=100, null=False, blank=False)
-    level = models.IntegerField(null=False, blank=False)
+    level = models.IntegerField(null=False, blank=False, validators=[MinValueValidator(1), MaxValueValidator(784)], default=1)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=False)
     stats = models.OneToOneField(Stats, on_delete=models.CASCADE, null=False, blank=False)
     potion = models.OneToOneField(Potion, on_delete=models.CASCADE, null=False, blank=False)
