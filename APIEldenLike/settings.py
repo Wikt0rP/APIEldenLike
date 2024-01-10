@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     'Inventory',
     'Item',
     'Location',
-    'Money',
     'Potion',
     'Reward',
     'Stats',
