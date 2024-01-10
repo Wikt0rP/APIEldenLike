@@ -98,7 +98,7 @@ DATABASES = {
     }
 }
 
-
+AUTH_PASSWORD_VALIDATORS = []
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -144,4 +144,12 @@ DJOSER = {
         'user': ['rest_framework.permissions.AllowAny'],
         'user_list': ['rest_framework.permissions.AllowAny'],
     },
+}
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
+SIMPLE_JWT = {
+   'AUTH_HEADER_TYPES': ('Bearer',)
 }
