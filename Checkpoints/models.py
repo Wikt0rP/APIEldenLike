@@ -6,3 +6,4 @@ class Checkpoints(models.Model):
     checkpointX = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     checkpointY = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     checkpointZ = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
+    checkpointReached = models.BooleanField(default=False)
