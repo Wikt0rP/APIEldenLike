@@ -24,5 +24,9 @@ urlpatterns = [
     path('', include('djoser.urls.jwt')),
     path('', include('Character.urls'), ),
     path('', include('Boss.urls')),
+    path('', include('Inventory.urls')),
+    path('', include('Item.urls')),
+
+
 
 ]
