@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from rest_framework import request, status
 from rest_framework.generics import CreateAPIView
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
 from Character.models import Character
@@ -26,6 +27,7 @@ class InventoryAddItem(CreateAPIView):
 
 
 class GetUserInventory(CreateAPIView):
+    permission_classes = (IsAuthenticated,)
     queryset = Character
     serializer_class = InventorySerializer
 
@@ -39,3 +41,13 @@ class GetUserInventory(CreateAPIView):
             return Response(serializer.data, status=status.HTTP_200_OK)
         else:
             return Response(status=status.HTTP_400_BAD_REQUEST)
+
+
+class ListAllInventories(CreateAPIView):
+    queryset = Inventory
+    serializer_class = InventorySerializer
+
+    def get(self, request, *args, **kwargs):
+        inventory = Inventory.objects.all()
+        serializer = InventorySerializer(inventory, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)

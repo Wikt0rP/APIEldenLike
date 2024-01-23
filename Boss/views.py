@@ -5,6 +5,7 @@ from rest_framework.response import Response
 
 from Boss.models import Boss
 from Item.models import Item
+from Reward.models import Reward
 
 
 # Create your views here.
@@ -23,3 +24,26 @@ class BossCreate(CreateAPIView):
         else:
             return Response(status=status.HTTP_400_BAD_REQUEST)
 
+
+class BossList(CreateAPIView):
+    def get(self, request, *args, **kwargs):
+        boss = Boss.objects.all()
+        return Response(boss.values(), status=status.HTTP_200_OK)
+
+
+class BossDetail(CreateAPIView):
+    def get(self, request, *args, **kwargs):
+        bossID = request.data['bossID']
+        boss = Boss.objects.get(pk=bossID)
+        return Response(boss.values(), status=status.HTTP_200_OK)
+
+
+class BossDrop(CreateAPIView):
+    def get(self, request, *args, **kwargs):
+        bossID = request.data['bossID']
+        boss = Boss.objects.get(pk=bossID)
+
+        rewardID = Reward.objects.get(pk=boss.bossReward.pk)
+        reward = Reward.objects.get(pk=rewardID)
+
+        return Response(reward.values(), status=status.HTTP_200_OK)
