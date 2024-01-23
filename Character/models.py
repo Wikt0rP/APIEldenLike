@@ -14,4 +14,3 @@ class Character(models.Model):
     stats = models.OneToOneField(Stats, on_delete=models.CASCADE, null=False, blank=False)
     potion = models.OneToOneField(Potion, on_delete=models.CASCADE, null=False, blank=False)
     money = models.IntegerField(null=False, blank=False, validators=[MinValueValidator(0), MaxValueValidator(999999999)], default=0)
-    inventory = models.OneToOneField(Inventory, on_delete=models.CASCADE, null=False, blank=False)
