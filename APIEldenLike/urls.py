@@ -26,6 +26,9 @@ urlpatterns = [
     path('', include('Boss.urls')),
     path('', include('Inventory.urls')),
     path('', include('Item.urls')),
+    path('', include('MapLocation.urls')),
+    path('', include('Reward.urls')),
+    path('', include('Stats.urls')),
 
 
 

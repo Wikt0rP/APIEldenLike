@@ -1,8 +1,12 @@
 from django.db import models
-from Checkpoints.models import Checkpoints
 
 
 class MapLocation(models.Model):
+    def __init__(self, *args, **kwargs):
+        super().__init__(args, kwargs)
+        self.data = None
+
     locationName = models.CharField(max_length=100)
-    checkpoint = models.ForeignKey(Checkpoints, on_delete=models.CASCADE, related_name='checkpoints')
+    discovered = models.BooleanField(default=False)
     description = models.TextField(null=True, blank=True)
+

@@ -7,7 +7,6 @@ from rest_framework.response import Response
 from Character.models import Character
 from Character.serializer import CharacterSerializer
 from Inventory.models import Inventory
-from Potion.models import Potion
 from Stats.models import Stats
 
 
@@ -19,8 +18,7 @@ class CharacterCreate(generics.CreateAPIView):
         user = request.user
         name = request.data['name']
         startLevel = request.data['startLevel']
-        potion = Potion()
-        potion.save()
+        potion = 3
         stats = Stats()
         stats.save()
         inventory = Inventory()

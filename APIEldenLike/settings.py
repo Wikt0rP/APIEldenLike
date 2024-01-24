@@ -44,14 +44,11 @@ INSTALLED_APPS = [
     'User',
     'Boss',
     'Character',
-    'Checkpoints',
     'Inventory',
     'Item',
     'MapLocation',
-    'Potion',
     'Reward',
     'Stats',
-    'Weapon',
 
 
 ]
