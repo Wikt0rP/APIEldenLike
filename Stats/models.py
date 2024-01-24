@@ -2,7 +2,6 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 
 
-
 class Stats(models.Model):
     vigor = models.IntegerField(null=False, blank=False, validators=[MinValueValidator(1), MaxValueValidator(99)], default=1)
     mind = models.IntegerField(null=False, blank=False, validators=[MinValueValidator(1), MaxValueValidator(99)], default=1)

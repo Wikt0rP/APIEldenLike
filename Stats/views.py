@@ -22,7 +22,7 @@ class StatsEdit(APIView):
         faith = request.data.get('faith')
         arcane = request.data.get('arcane')
 
-        characterID = request.user("characterID")
+        characterID = request.data["characterID"]
         character = Character.objects.get(pk=characterID)
         stats = Stats.objects.get(character=character)
 
@@ -54,4 +54,16 @@ class StatsList(APIView):
     def get(self, request):
         stats = Stats.objects.all()
         serializer = self.serializer_class(stats, many=True)
+        return Response(serializer.data, status=200)
+
+
+class StatsByCharacter(APIView):
+    queryset = Stats
+    serializer_class = StatsSerializer
+
+    def get(self, request):
+        characterID = request.data['characterID']
+        character = Character.objects.get(pk=characterID)
+        stats = Stats.objects.get(character=character)
+        serializer = self.serializer_class(stats)
         return Response(serializer.data, status=200)
