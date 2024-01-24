@@ -1,6 +1,5 @@
-<h1>Elden Ring Inspired API</h1>
+<h3>API inspirowane grą Elden Ring.</h3>
 
-<h3>This project is API inspired by FromSoftware game - Elden Ring. </h3>
 
 <h3>Developed using: </h3>
 
