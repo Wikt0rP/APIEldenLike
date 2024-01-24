@@ -2,9 +2,9 @@ from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-
+from MapLocation.models import MapLocation
 # Create your views here.
-from MapLocation.serializer import MapLocation
+from MapLocation.serializer import MapLocationSerializer
 
 
 class CreateLocation(APIView):
@@ -22,6 +22,6 @@ class ListLocations(APIView):
 
     def get(self, request):
         locations = MapLocation.objects.all()
-        serializer = MapLocation(locations, many=True)
-        return Response(serializer.data, status=200)
+        serializer = MapLocationSerializer(locations, many=True)
+        return Response(serializer.data)
     

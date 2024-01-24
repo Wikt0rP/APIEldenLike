@@ -21,10 +21,9 @@ class CharacterCreate(generics.CreateAPIView):
         potion = 3
         stats = Stats()
         stats.save()
-        inventory = Inventory()
-        inventory.save()
-        character = Character(characterName=name, user=user, level=startLevel, money=0, potion=potion, stats=stats, inventory=inventory)
+        character = Character(characterName=name, user=user, level=startLevel, money=0, potion=potion, stats=stats)
         character.save()
+
         return Response(status=status.HTTP_201_CREATED)
 
 

@@ -9,7 +9,6 @@ from Item.serializer import ItemSerializer
 
 # Create your views here.
 class ItemCreate(generics.CreateAPIView):
-    permission_classes = (IsAuthenticated,)
     serializer_class = ItemSerializer
 
     def post(self, request, *args, **kwargs):
