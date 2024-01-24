@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class CheckpointsConfig(AppConfig):
+class MapLocationConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'Checkpoints'
+    name = 'MapLocation'

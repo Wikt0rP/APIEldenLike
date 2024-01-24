@@ -20,4 +20,16 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
+    path('', include('djoser.urls')),
+    path('', include('djoser.urls.jwt')),
+    path('', include('Character.urls'), ),
+    path('', include('Boss.urls')),
+    path('', include('Inventory.urls')),
+    path('', include('Item.urls')),
+    path('', include('MapLocation.urls')),
+    path('', include('Reward.urls')),
+    path('', include('Stats.urls')),
+
+
+
 ]
