@@ -9,6 +9,7 @@ from Inventory.models import Inventory
 from Inventory.serializer import InventorySerializer
 from Item.models import Item
 
+
 class InventoryAddItem(CreateAPIView):
     def post(self, request, *args, **kwargs):
         itemID = request.data['itemID']
@@ -18,8 +19,10 @@ class InventoryAddItem(CreateAPIView):
             item = Item.objects.get(pk=itemID)
             character = Character.objects.get(pk=characterID)
 
-            inventory = Inventory(itemInventory=item, character=character)
+            inventory = Inventory(character=character)
             inventory.save()
+            inventory.itemInventory.set([item])
+
             return Response(status=status.HTTP_201_CREATED)
         else:
             return Response(status=status.HTTP_400_BAD_REQUEST)
