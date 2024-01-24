@@ -1,7 +1,6 @@
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 
-from Character.models import Character
 
 
 class Stats(models.Model):
@@ -13,4 +12,3 @@ class Stats(models.Model):
     intelligence = models.IntegerField(null=False, blank=False, validators=[MinValueValidator(1), MaxValueValidator(99)], default=1)
     faith = models.IntegerField(null=False, blank=False, validators=[MinValueValidator(1), MaxValueValidator(99)], default=1)
     arcane = models.IntegerField(null=False, blank=False, validators=[MinValueValidator(1), MaxValueValidator(99)], default=1)
-    character = models.ForeignKey(Character, on_delete=models.CASCADE, null=True, blank=True)
