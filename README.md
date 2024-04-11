@@ -1,4 +1,4 @@
-<h3>API inspirowane grą Elden Ring.</h3>
+<h3>API inspired by Elden Ring.</h3>
 
 
 <h3>Developed using: </h3>
